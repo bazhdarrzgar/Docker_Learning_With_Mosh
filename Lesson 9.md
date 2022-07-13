@@ -1,8 +1,8 @@
 * installing docker conmpose
 
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04
+    - link 1: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04
 
-https://stackoverflow.com/questions/49839028/how-to-upgrade-docker-compose-to-latest-version
+    - link 2: https://stackoverflow.com/questions/49839028/how-to-upgrade-docker-compose-to-latest-version
 
 ```bash
 
@@ -18,10 +18,10 @@ chmod +x ~/.docker/cli-plugins/docker-compose
 
 docker compose version
 
-===
+===================
 Output
 Docker Compose version v2.3.3
-===
+===================
 
 
 ```
@@ -35,21 +35,21 @@ Docker Compose version v2.3.3
 
 docker image ls -q
 
-===
+===================
 58f2f789bbb6
 73d68b2593af
 90ed31added3
 50bfd284aa0d
-===
+===================
 
 docker container ls -aq
 
-===
+===================
 fb2ef15eb07b
 cdfee19c67e1
 87ac47aced91
 e7c524964bcf
-===
+===================
 
 
 
@@ -57,17 +57,17 @@ e7c524964bcf
 # NOTE: if you want remove image you should first remove the container for the image after that remove the image
 docker container rm -f $(docker container ls -aq)
 
-===
+===================
 fb2ef15eb07b
 cdfee19c67e1
 87ac47aced91
 e7c524964bcf
-===
+===================
 
 
 docker image rm -f $(docker image ls -aq)
 
-===
+===================
 Untagged: final-trans:latest
 Deleted: sha256:58f2f789bbb633a27f7a1265f618a1fe33eeff6579edd8b5b22251a077c4f213
 Deleted: sha256:fadf32cbfe09acee722fb97721fab28313989274ca12b57a5d8fd349a18d99a6
@@ -75,26 +75,26 @@ Deleted: sha256:a86037d0acb10feb43360138fde5aa878de420e0fb21411b87074079a0f03b87
 .
 .
 .
-===
+===================
 
 
 docker images
 
-===
+===================
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
-===
+===================
 
 docker ps -a
 
-===
+===================
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-===
+===================
 
 docker ps
 
-===
+===================
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-===
+===================
 
 
 ```
@@ -108,10 +108,10 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 # docker compose version
 docker compose version
 
-===
+===================
 # it should be higher than 1.28.5
 Docker Compose version v2.3.3
-===
+===================
 
 # info about docker compose
 docker compose
@@ -131,7 +131,7 @@ docker compose up
 
 * yml vs json
 
-* json
+1. json
 
 ```json
 # json have double quotes ("") for knonwing if something is string or not
@@ -151,7 +151,7 @@ docker compose up
 
 ```
 
-* yml code
+2. yml code
 
 ```yml
 # first yml start with --- is beganning of the line
@@ -276,7 +276,7 @@ volumes:
 
 docker compose
 
-===
+===================
 Usage:  docker compose [OPTIONS] COMMAND
 
 Docker Compose
@@ -324,11 +324,11 @@ Commands:
   version     Show the Docker Compose version information
 
 Run docker compose COMMAND --help for more information on a command.
-===
+===================
 
 docker compose build --help
 
-===
+===================
 
 Usage:  docker compose build [SERVICE...]
 
@@ -342,7 +342,7 @@ Options:
       # ***
       --pull                    Always attempt to pull a newer version of the image.
   -q, --quiet                   Dont print anything to STDOUT
-===
+===================
 
 
 
@@ -350,16 +350,16 @@ Options:
 
 docker compose build
 
-===
+===================
 .
 .
 .
-===
+===================
 
 
 docker images
 
-===
+===================
 # if you see the image is created an hour ago but you build the project now why do that because docker look at the image of no change then it is just previous one if change something it will change the time
 REPOSITORY       TAG                  IMAGE ID       CREATED         SIZE
 vidly_api        latest               17de95cb26d9   2 hours ago     184MB
@@ -368,7 +368,7 @@ vidly_frontend   latest               83c526da448a   2 hours ago     299MB
 vidly_web        latest               83c526da448a   2 hours ago     299MB
 mongo            4.0-xenial           d47c005e9fb1   4 weeks ago     430MB
 node             14.16.0-alpine3.13   50bfd284aa0d   15 months ago   117MB
-===
+===================
 
 
 # building with no cache
@@ -384,7 +384,7 @@ docker compose build --no-cache
 
 docker compose up --help
 
-===
+===================
 
 Usage:  docker compose up [SERVICE...]
 
@@ -411,7 +411,7 @@ Options:
       --scale scale               Scale SERVICE to NUM instances. Overrides the scale setting in the Compose file if present.
   -t, --timeout int               Use this timeout in seconds for container shutdown when attached or when containers are already running. (default 10)
       --wait                      Wait for services to be running|healthy. Implies detached mode.
-===
+===================
 
 
 # by default it will build it is like you are type this ( docker compose up --build )
@@ -423,14 +423,14 @@ docker compose up -d
 
 docker compose ps
 
-===
+===================
 NAME                COMMAND                  SERVICE             STATUS              PORTS
 vidly-api-1         "docker-entrypoint.s…"   api                 running             0.0.0.0:3001->3001/tcp, :::3001->3001/tcp
 vidly-backend-1     "docker-entrypoint.s…"   backend             exited (137)        
 vidly-db-1          "docker-entrypoint.s…"   db                  running             0.0.0.0:27017->27017/tcp, :::27017->27017/tcp
 vidly-frontend-1    "docker-entrypoint.s…"   frontend            exited (0)          
 vidly-web-1         "docker-entrypoint.s…"   web                 running             0.0.0.0:3000->3000/tcp, :::3000->3000/tcp
-===
+===================
 
 # Note: test your browser look at link: localhost:3000     link: localhost:3001
 
@@ -439,18 +439,18 @@ docker compose down
 
 docker ps
 
-===
+===================
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-===
+===================
 
 
 docker ps -a
 
-===
+===================
 CONTAINER ID   IMAGE            COMMAND                  CREATED       STATUS                     PORTS     NAMES
 8b3c6d713dce   vidly_frontend   "docker-entrypoint.s…"   2 hours ago   Exited (0) 2 hours ago               vidly-frontend-1
 63733aac318b   vidly_backend    "docker-entrypoint.s…"   2 hours ago   Exited (137) 2 hours ago             vidly-backend-1
-===
+===================
 
 ```
 
@@ -462,7 +462,7 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED       STATUS   
 
 docker compose up -d
 
-===
+===================
 # in first line you are see that the docker is actually create network for this project that you run it
 WARN[0000] Found orphan containers ([vidly-frontend-1 vidly-backend-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up. 
 [+] Running 4/4
@@ -473,13 +473,13 @@ WARN[0000] Found orphan containers ([vidly-frontend-1 vidly-backend-1]) for this
  ⠿ Container vidly-db-1       Started                                                                                                                                                                         1.0s
  ⠋ Container vidly-backend-1  Starting                                                                                                                                                                        0.0s
 Error response from daemon: network 2c14c08b9669047926a7a7ac0ee20b587b8fa46fa96d173a18c904a7aa04da23 not found
-===
+===================
 
 
 # show the network that is created 
 docker network ls
 
-===
+===================
 # every docker is have 3 network ( bridge host none )
 NETWORK ID     NAME            DRIVER    SCOPE
 4c18f2864a5c   bridge          bridge    local
@@ -487,23 +487,23 @@ NETWORK ID     NAME            DRIVER    SCOPE
 cd292fe3b125   none            null      local
 # vidly is this network that is created   this is contain 3 host this is the ( web and api and db ) that we created it in docker-compose file
 5225dd7943f2   vidly_default   bridge    local
-===
+===================
 
 
 docker ps
 
-===
+===================
 CONTAINER ID   IMAGE              COMMAND                  CREATED         STATUS         PORTS                                           NAMES
 f5bf5645a3a7   mongo:4.0-xenial   "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   0.0.0.0:27017->27017/tcp, :::27017->27017/tcp   vidly-db-1
 aabceb8c68c2   vidly_api          "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   0.0.0.0:3001->3001/tcp, :::3001->3001/tcp       vidly-api-1
 89887456674b   vidly_web          "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp       vidly-web-1
-===
+===================
 
 
 # let's connect to one of the server and ping for it i use web for my self you can do one of them
 docker exec -it -u root 89887456674b sh
 
-===
+===================
 /app # ping web
 PING web (172.19.0.4): 56 data bytes
 64 bytes from 172.19.0.4: seq=0 ttl=64 time=0.077 ms
@@ -513,7 +513,7 @@ PING web (172.19.0.4): 56 data bytes
 --- web ping statistics ---
 3 packets transmitted, 3 packets received, 0% packet loss
 round-trip min/avg/max = 0.077/0.099/0.116 ms
-===
+===================
 
 # docker have DNS SERVER that containe the ip address of the each container 
 # inside each container we have DNS RESOLVER this DNS RESOLVER talk with DNS SERVER to know what is the ip address of the ip address of own container after that the DNS SERVER response and send the ip address each container is part of the network
@@ -522,7 +522,7 @@ round-trip min/avg/max = 0.077/0.099/0.116 ms
 # to know the ip address of the container
 ifconfig
 
-===
+===================
 # look at first one means eth0
 eth0      Link encap:Ethernet  HWaddr 02:42:AC:13:00:04
           # addr:172.19.0.4 is the ip address  
@@ -540,7 +540,7 @@ lo        Link encap:Local Loopback
           TX packets:14 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000 
           RX bytes:987 (987.0 B)  TX bytes:987 (987.0 B)
-===
+===================
 
 ```
 
@@ -552,7 +552,7 @@ lo        Link encap:Local Loopback
 
 docker compose logs --help
 
-===
+===================
 
 Usage:  docker compose logs [SERVICE...]
 
@@ -566,37 +566,37 @@ Options:
       --tail string     Number of lines to show from the end of the logs for each container. (default "all")
   -t, --timestamps      Show timestamps.
       --until string    Show logs before a timestamp (e.g. 2013-01-02T13:23:37Z) or relative (e.g. 42m for 42 minutes)
-===
+===================
 
 
 # this will show you all logs for all this container that is running with docker compose
 docker compose logs
 
-===
+===================
 .
 .
 .
-===
+===================
 
 
 docker ps
 
-===
+===================
 CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                           NAMES
 f5bf5645a3a7   mongo:4.0-xenial   "docker-entrypoint.s…"   25 minutes ago   Up 25 minutes   0.0.0.0:27017->27017/tcp, :::27017->27017/tcp   vidly-db-1
 aabceb8c68c2   vidly_api          "docker-entrypoint.s…"   25 minutes ago   Up 25 minutes   0.0.0.0:3001->3001/tcp, :::3001->3001/tcp       vidly-api-1
 89887456674b   vidly_web          "docker-entrypoint.s…"   25 minutes ago   Up 25 minutes   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp       vidly-web-1
-===
+===================
 
 # syntax ( docker logs  -f [container_id] ) 
 # for example you just want see the web logs real time
 docker logs  -f 89887456674b
 
-===
+===================
 .
 .
 .
-===
+===================
 
 ```
 
@@ -756,20 +756,20 @@ npm start
 # first remove volume (vidly_vidly) for my project this volume is for my database
 docker volume ls
 
-===
+===================
 DRIVER    VOLUME NAME
 local     1293fd1fd8d51da76eb7b5f58b09e3a81f9c7018bad00e2bb5fc99a30eee1b5b
 local     app-data
 local     e950abd8d39ca7b2af3c2a30c2662bc41447ede2f006585825dd09c3b5a2a4b2
 local     pwd
 local     vidly_vidly
-===
+===================
 
 docker volume rm vidly_vidly
 
-===
+===================
 vidly_vidly
-===
+===================
 
 docker compose up -d
 

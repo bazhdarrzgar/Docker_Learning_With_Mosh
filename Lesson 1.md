@@ -1,4 +1,6 @@
-## What is docker: docker is platform that provide holding your project with this dependence without installing in new machine or setting up the configuration for it.
+## What is Docker and Some Note: 
+
+* docker is platform that provide holding your project with this dependence without installing in new machine or setting up the configuration for it.
 
 * Problem Before : 
 
@@ -18,10 +20,6 @@
     
     - the version you need for each library or … will install for specific image or container this is the best.
 
-* Some Of Note:
-
-??????
-
 
 * Artichture Of Docker:
 
@@ -29,13 +27,33 @@
     
     - Client in this picture is Docker Engine
 
-??????
+<div align="center">
+
+![image](https://cdn.educba.com/academy/wp-content/uploads/2019/10/Docker-Architecture-2.png)
+
+</div>
+
+* Docker file
+
+<div align="center">
+
+![image](https://miro.medium.com/max/1400/0*gAmNJPLhuhP9cNtn.png)
+
+</div>
+
+* docker layer
+
+<div align="center">
+
+![image](https://cdn.ttgtmedia.com/rms/onlineImages/itops-a_docker_image_and_containers-f_mobile.png)
+
+</div>
 
 ## Installing Docker
 
-    link: https://docs.docker.com/engine/install/
+link: https://docs.docker.com/engine/install/
 
-    installation for linux: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+installation for linux: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 
 * Some usefull command
 
@@ -79,22 +97,22 @@ Server: Docker Engine - Community
 
 
 ------------------------------
-# installing ubuntu using docker 
 
+## installing ubuntu using docker 
 
 
 ```bash
 
 docker pull ubuntu                 or                 docker run ubuntu
 
-===
+===================
 Unable to find image 'ubuntu:latest' locally
 latest: Pulling from library/ubuntu
 405f018f9d1d: Downloading [============================================>      ]  26.77MB/30.42MB
 405f018f9d1d: Pull complete 
 Digest: sha256:b6b83d3c331794420340093eb706a6f152d9c1fa51b262d9bf34594887c2c7ac
 Status: Downloaded newer image for ubuntu:latest
-===
+===================
 
 
 

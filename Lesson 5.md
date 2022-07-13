@@ -20,30 +20,30 @@
 
 docker start -i 1c6326fc5ba8
 
-===
+===================
 root@1c6326fc5ba8:~# 
-===
+===================
 
 exit
 
 docker run -it ubuntu
 
-===
+===================
 # this will start with different id
 root@f57b4c192a30:/# 
-===
+===================
 
 exit
 
 docker ps -a
 
-===
+===================
 CONTAINER ID   IMAGE       COMMAND                  CREATED          STATUS                          PORTS     NAMES
 f57b4c192a30   ubuntu      "bash"                   40 seconds ago   Exited (0) 3 seconds ago                  great_proskuriakova
 fb0114f72029   react-app   "docker-entrypoint.s…"   7 hours ago      Exited (0) 7 hours ago                    romantic_swanson
 1c6326fc5ba8   ubuntu      "bash"                   9 hours ago      Exited (0) About a minute ago             blissful_galileo
 2acfe607b1b6   ubuntu      "bash"                   9 hours ago      Exited (0) About a minute ago             focused_brattain
-===
+===================
 
 -------------------------
 
@@ -85,7 +85,7 @@ ENTRYPOINT
 
 * Run project but we run it with docker
 
-https://docs.docker.com/samples/dotnetcore/
+    - More info: https://docs.docker.com/samples/dotnetcore/
 
 * example
 
@@ -113,14 +113,17 @@ ENTRYPOINT ["dotnet", "aspnetapp.dll"]
 
 * to search for image in docker website go to docker hub
 
-https://hub.docker.com/
+    - link: https://hub.docker.com/
 
 * for example i want node go this url
-* if you go to the tags tab you will see there is a lot of node version
-* also if you look at any of the node version you will see the node is run in top of different operating system linux why not windows because windows is fucking large
-* note alpine image is very small if very lite good one
 
-https://hub.docker.com/_/node?tab=tags
+* if you go to the tags tab you will see there is a lot of node version
+
+* also if you look at any of the node version you will see the node is run in top of different operating system linux why not windows because windows is fucking large
+
+* note alpine image is very small if very lite good choice
+
+    - link: https://hub.docker.com/_/node?tab=tags
 
 ```dockerfile
 
@@ -149,9 +152,9 @@ docker run -it react-app sh             or            docker start -i 051c4230de
 # now if you are in shell or bash look if node install
 node --version
 
-===
+===================
 v16.16.0
-===
+===================
 
 ```
 
@@ -175,7 +178,7 @@ COPY . .
 
 docker build -t react-app .
 
-===
+===================
 Sending build context to Docker daemon  866.8kB
 Step 1/3 : FROM node:lts-alpine3.16
  ---> b48aa2e90c0a
@@ -188,7 +191,7 @@ Step 3/3 : COPY . .
  ---> 8dada96d0339
 Successfully built 8dada96d0339
 Successfully tagged react-app:latest
-===
+===================
 
 ```
 
@@ -198,11 +201,11 @@ Successfully tagged react-app:latest
 
 docker run -it react-app sh             or            docker start -i 051c4230deb4 
 
-===
+===================
 /app # 
 /app # ls
 README.md     dockerfile    package.json  public        src           yarn.lock
-===
+===================
 
 ```
 
@@ -289,16 +292,16 @@ docker run -it react-app sh             or            docker start -i 051c4230de
 
 printenv API_URL
 
-===
+===================
 http://api.myapp.com/
-===
+===================
 
 # or you can print like this
 echo $API_URL
 
-===
+===================
 http://api.myapp.com/
-===
+===================
 
 ```
 
@@ -332,7 +335,7 @@ docker run -it alpine
 # more info about adduser
 adduser
 
-===
+===================
 
 BusyBox v1.35.0 (2022-05-09 17:27:12 UTC) multi-call binary.
 
@@ -352,7 +355,7 @@ Create new user, or add USER to GROUP
 	-u UID		User id
 	-k SKEL		Skeleton directory (/etc/skel)
 
-===
+===================
 
 
 # create group
@@ -360,9 +363,9 @@ addgroup app
 
 groupapp
 
-===
+===================
 app
-===
+===================
 
 
 
@@ -417,16 +420,16 @@ docker run -it react-app sh
 
 whoami
 
-===
+===================
 # now any one start the application it should see the alex user
 alex
-===
+===================
 
 ls -l
 
-===
+===================
 
-===
+===================
 
 ```
 
@@ -442,12 +445,12 @@ docker run -d --name container-name image-name
 # first you need name the container that you want copy file or folder form it
 docker ps -a
 
-===
+===================
 # in end column you can see the name of the container you need this name
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                     PORTS      NAMES
 490597c2d729   react-app      "docker-entrypoint.s…"   46 seconds ago   Up 46 seconds              3000/tcp   upbeat_banzai
 9a06d1ad717c   18e7508e5944   "docker-entrypoint.s…"   14 minutes ago   Exited (0) 2 minutes ago              elastic_northcutt
-===
+===================
 
 # run it yo can run like me as bash
 # docker exec -it docker-name /bin/bash
@@ -483,9 +486,9 @@ docker run react-app sh
 
 # if you run this you will see this error
 
-===
+===================
 EACCES: permission denied, mkdir '/app/node_modules/.cache'
-===
+===================
 
 ```
 

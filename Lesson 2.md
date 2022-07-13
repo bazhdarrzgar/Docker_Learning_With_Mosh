@@ -34,7 +34,7 @@ node app.js
 
     - create file name is: Dockerfile
 
-```yml
+```Dockerfile
 
 # means use alpine container and run node in top of the alpine
 # now the node application run in alpine linux container
@@ -46,14 +46,16 @@ WORKDIR /app
 # run app.js use node
 CMD node app.js
 
+```
 
+* back to bash
 
-
+```bash
 
 # after that run this command
 sudo docker build -t hello-docker .
 
-===
+===================
 Sending build context to Docker daemon  3.072kB
 Step 1/4 : FROM node:alpine
 alpine: Pulling from library/node
@@ -76,18 +78,23 @@ Removing intermediate container a09e4fdcc8af
  ---> 55422aa0d921
 Successfully built 55422aa0d921
 Successfully tagged hello-docker:latest
-===
+===================
+
+
+
 
 
 
 # see if my image is exist
 sudo docker image ls                       or                docker images
 
-===
+===================
 REPOSITORY     TAG       IMAGE ID       CREATED              SIZE
 hello-docker   latest    55422aa0d921   About a minute ago   174MB
 node           alpine    515db77e67c7   2 weeks ago          174MB
-===
+===================
+
+
 
 
 
@@ -100,13 +107,13 @@ docker run hello-docker
 # if you want run your small project in anywhere then import it to docker website and pull it in this computer that you want
 docker pull hello-docker
 
-===
+===================
 # this will be install all depedence
 .
 .
 .
 .
-===
+===================
 
 docker run hello-docker
 

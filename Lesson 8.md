@@ -254,7 +254,7 @@ docker exec -it [container_id]
 # build the image with full detail in the dockerfile
 docker build -t [name] [path_your_application]
 
-# use this command if the port is point the porn in the container 
+# use this command if the port is point the port in the container 
 docker ps
 
 # make sure the container run in the background use this command for that

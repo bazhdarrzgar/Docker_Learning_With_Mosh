@@ -6,7 +6,7 @@
 
 docker history react-app
 
-===
+===================
 # you can see in column ( CREATED BY ) that what script of docker is running and in ( SIZE ) column you can see the size of this script docker take for excute 
 # find this command that take more and optimize it in this case is my ( COPY ) how to optimize it
 IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
@@ -24,7 +24,7 @@ b48aa2e90c0a   2 days ago       /bin/sh -c #(nop)  CMD ["node"]                 
 <missing>      2 days ago       /bin/sh -c #(nop)  ENV NODE_VERSION=16.16.0     0B        
 <missing>      6 weeks ago      /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B        
 <missing>      6 weeks ago      /bin/sh -c #(nop) ADD file:8e81116368669ed3d…   5.53MB  
-===
+===================
 
 ```
 
@@ -52,7 +52,7 @@ CMD npm start
 
 docker build -t react-app .
 
-===
+===================
 # first time take a lot of time
 Sending build context to Docker daemon  259.4MB
 Step 1/8 : FROM node:lts-alpine3.16
@@ -78,11 +78,11 @@ Step 8/8 : CMD npm start
  ---> 14c50b59ea20
 Successfully built 14c50b59ea20
 Successfully tagged react-app:latest
-===
+===================
 
 docker build -t react-app .
 
-===
+===================
 # second time if you look at it uses cache this time
 Sending build context to Docker daemon  259.4MB
 Step 1/8 : FROM node:lts-alpine3.16
@@ -110,7 +110,7 @@ Step 8/8 : CMD npm start
  ---> 14c50b59ea20
 Successfully built 14c50b59ea20
 Successfully tagged react-app:latest
-===
+===================
 
 ```
 
@@ -123,14 +123,14 @@ Successfully tagged react-app:latest
 # see if there is any running container
 docker ps 
 
-===
+===================
 CONTAINER ID   IMAGE          COMMAND                  CREATED             STATUS                           PORTS     NAMES
-===
+===================
 
 # see the stoping container
 docker ps -a
 
-===
+===================
 
 CONTAINER ID   IMAGE          COMMAND                  CREATED             STATUS                           PORTS     NAMES
 2c712d65ecd7   ee5b545c0645   "/bin/sh -c 'npm i n…"   4 minutes ago       Up 4 minutes                               stupefied_borg
@@ -142,11 +142,11 @@ fce9439ea11a   4ccb0605350e   "docker-entrypoint.s…"   About an hour ago   Exi
 06b29fe824f6   4ccb0605350e   "docker-entrypoint.s…"   About an hour ago   Exited (1) About an hour ago               charming_borg
 cdd9a81c5789   d080a7fd70a6   "docker-entrypoint.s…"   2 hours ago         Exited (130) About an hour ago             focused_germain
 
-===
+===================
 
 docker container prune
 
-===
+===================
 # this will remove any useless container
 WARNING! This will remove all stopped containers.
 Are you sure you want to continue? [y/N] y
@@ -161,13 +161,13 @@ cdd9a81c57895492173c051defddda6fd536dc8b0aabf1836568d5d7053dc5e7
 
 Total reclaimed space: 506.3MB
 
-===
+===================
 
 
 # look for image for this contianer and remove it
 docker images
 
-===
+===================
 # this image that not have repository and tag this image is useless means it is run multiple time for small changes you can remove all in this this way in below
 REPOSITORY   TAG              IMAGE ID       CREATED             SIZE
 <none>       <none>           ee5b545c0645   16 minutes ago      112MB
@@ -176,12 +176,12 @@ react-app    latest           7662953459c2   52 minutes ago      339MB
 <none>       <none>           4ccb0605350e   About an hour ago   339MB
 <none>       <none>           d080a7fd70a6   2 hours ago         113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago          112MB
-===
+===================
 
 
 docker image prune
 
-===
+===================
 
 WARNING! This will remove all dangling images.
 Are you sure you want to continue? [y/N] y
@@ -207,31 +207,31 @@ deleted: sha256:ebea7749367985878bdb25a399d9b72cf943d898beca63fb9e95009752f0b69d
 deleted: sha256:e6a16342ecf3c6f4c98f0631667398363200b566469c47914acaccc5bf011126
 
 Total reclaimed space: 454.5MB
-===
+===================
 
 
 docker images
 
-===
+===================
 REPOSITORY   TAG              IMAGE ID       CREATED          SIZE
 <none>       <none>           80a3bda8620a   6 seconds ago    495MB
 react-app    latest           7662953459c2   57 minutes ago   339MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago       112MB
 [15:14:16] soyansoon@soyansoon-Blade  $      ~/Documents/Study/M
-===
+===================
 
 docker ps -a
 
-===
+===================
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-===
+===================
 
 
 
 # mroe info about docker image
 docker image
 
-===
+===================
 Usage:  docker image COMMAND
 
 Manage images
@@ -251,7 +251,7 @@ Commands:
   tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
 
 Run 'docker image COMMAND --help' for more information on a command.
-===
+===================
 
 ```
 
@@ -264,34 +264,34 @@ Run 'docker image COMMAND --help' for more information on a command.
 # see the tag
 docker images
 
-===
+===================
 # by default the Tag is lates this is not means that is latest version of this program or os you are using means it is latest version of this modifyer that you are modify it
 REPOSITORY   TAG              IMAGE ID       CREATED         SIZE
 react-app    latest           50d6cd640827   2 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago     113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago      112MB
 ubuntu       latest           27941809078c   4 weeks ago     77.8MB
-===
+===================
 
 docker build -t react-app .
 
 docker images
 
-===
+===================
 # it is steal the latest tag for this new build that we made
 REPOSITORY   TAG              IMAGE ID       CREATED         SIZE
 react-app    latest           50d6cd640827   4 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago     113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago      112MB
 ubuntu       latest           27941809078c   4 weeks ago     77.8MB
-===
+===================
 
 
 
 # leat's name the tag
 docker build -t react-app:1 .
 
-===
+===================
 # you can see there is new that have the same image id for previous react-app
 REPOSITORY   TAG              IMAGE ID       CREATED         SIZE
 react-app    1                50d6cd640827   5 minutes ago   113MB
@@ -299,28 +299,28 @@ react-app    latest           50d6cd640827   5 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago     113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago      112MB
 ubuntu       latest           27941809078c   4 weeks ago     77.8MB
-===
+===================
 
 
 
 # how to remove it when we have the same image id like this we do
 docker image remove react-app:1
 
-===
+===================
 Untagged: react-app:1
-===
+===================
 
 
 
 docker images
 
-===
+===================
 REPOSITORY   TAG              IMAGE ID       CREATED         SIZE
 react-app    latest           50d6cd640827   7 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago     113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago      112MB
 ubuntu       latest           27941809078c   4 weeks ago     77.8MB
-===
+===================
 
 
 # rename the tag
@@ -330,14 +330,14 @@ docker image tag react-app:latest react-app:1
 
 docker images
 
-===
+===================
 REPOSITORY   TAG              IMAGE ID       CREATED          SIZE
 react-app    1                50d6cd640827   10 minutes ago   113MB
 react-app    latest           50d6cd640827   10 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago      113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago       112MB
 ubuntu       latest           27941809078c   4 weeks ago      77.8MB
-===
+===================
 
 
 
@@ -351,7 +351,7 @@ docker build -t react-app:2 .
 
 docker images
 
-===
+===================
 # the tag 1 and  2 has the same image id
 REPOSITORY   TAG              IMAGE ID       CREATED          SIZE
 react-app    1                50d6cd640827   12 minutes ago   113MB
@@ -360,13 +360,13 @@ react-app    latest           50d6cd640827   12 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago      113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago       112MB
 ubuntu       latest           27941809078c   4 weeks ago      77.8MB
-===
+===================
 
 
 # same other test if i don't change any thing run it again with different tag name
 docker build -t react-app:3 .
 
-===
+===================
 REPOSITORY   TAG              IMAGE ID       CREATED          SIZE
 react-app    1                50d6cd640827   12 minutes ago   113MB
 react-app    2                50d6cd640827   12 minutes ago   113MB
@@ -375,7 +375,7 @@ react-app    latest           50d6cd640827   12 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago      113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago       112MB
 ubuntu       latest           27941809078c   4 weeks ago      77.8MB
-===
+===================
 
 
 
@@ -385,7 +385,7 @@ docker build -t react-app:4 .
 
 docker images
 
-===
+===================
 REPOSITORY   TAG              IMAGE ID       CREATED          SIZE
 react-app    4                2b579ddfacdc   4 seconds ago    113MB
 react-app    1                50d6cd640827   19 minutes ago   113MB
@@ -395,14 +395,14 @@ react-app    latest           50d6cd640827   19 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago      113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago       112MB
 ubuntu       latest           27941809078c   4 weeks ago      77.8MB
-===
+===================
 
 # this will point tag latest there id to id new image tag 2 
 docker image tag 2b579ddfacdc react-app:latest
 
 docker images
 
-===
+===================
 REPOSITORY   TAG              IMAGE ID       CREATED          SIZE
 react-app    4                2b579ddfacdc   4 seconds ago    113MB
 react-app    1                50d6cd640827   19 minutes ago   113MB
@@ -412,7 +412,7 @@ react-app    latest           2b579ddfacdc   19 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago      113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago       112MB
 ubuntu       latest           27941809078c   4 weeks ago      77.8MB
-===
+===================
 
 ```
 
@@ -433,7 +433,7 @@ ubuntu       latest           27941809078c   4 weeks ago      77.8MB
 
 docker images
 
-===
+===================
 REPOSITORY   TAG              IMAGE ID       CREATED          SIZE
 react-app    4                2b579ddfacdc   21 minutes ago   113MB
 react-app    1                50d6cd640827   40 minutes ago   113MB
@@ -443,7 +443,7 @@ react-app    latest           50d6cd640827   40 minutes ago   113MB
 <none>       <none>           9feb485cbd35   2 hours ago      113MB
 node         lts-alpine3.16   b48aa2e90c0a   2 days ago       112MB
 ubuntu       latest           27941809078c   4 weeks ago      77.8MB
-===
+===================
 
 
 
@@ -453,7 +453,7 @@ docker image tag 50d6cd640827 829282/hello-docker-repository:2
 
 docker images
 
-===
+===================
 REPOSITORY                       TAG              IMAGE ID       CREATED          SIZE
 react-app                        4                2b579ddfacdc   22 minutes ago   113MB
 # now name of the  REPOSITORY of the tag 2 is   829282/hello-docker-repository
@@ -465,19 +465,19 @@ react-app                        latest           50d6cd640827   41 minutes ago 
 <none>                           <none>           9feb485cbd35   2 hours ago      113MB
 node                             lts-alpine3.16   b48aa2e90c0a   2 days ago       112MB
 ubuntu                           latest           27941809078c   4 weeks ago      77.8MB
-===
+===================
 
 
 
 # now login with docker in terminal
 docker login
 
-===
+===================
 Login with your Docker ID to push and pull images from Docker Hub. If you dont have a Docker ID, head over to https://hub.docker.com to create one.
 Username: 
 Password:
 Login Succeded
-===
+===================
 
 
 # now push the repository to the internet
@@ -485,7 +485,7 @@ Login Succeded
 # after that go to internet you will be see the change link: https://hub.docker.com/repository/docker/829282/hello-docker-repository
 docker push 829282/hello-docker-repository:2
 
-===
+===================
 The push refers to repository [docker.io/829282/hello-docker-repository]
 9ed9a9672c53: Pushed 
 74251841d3a2: Pushed 
@@ -494,7 +494,7 @@ d56a7115c765: Mounted from library/node
 4f9820ca95dd: Mounted from library/node 
 24302eb7d908: Mounted from library/node 
 2: digest: sha256:7d1665e1688a6d84cc331d99f4f607b7ffd69bc88f0c55e6d1b1b077aa2b9b25 size: 1575
-===
+===================
 
 
 
@@ -504,7 +504,7 @@ d56a7115c765: Mounted from library/node
 # and build it
 docker build -t react-app:5 .
 
-===
+===================
 Sending build context to Docker daemon  867.8kB
 Step 1/4 : FROM node:lts-alpine3.16
  ---> b48aa2e90c0a
@@ -519,12 +519,12 @@ Step 4/4 : ENV API_URL=http://api.myapp.com/
  ---> 2b579ddfacdc
 Successfully built 2b579ddfacdc
 Successfully tagged react-app:5
-===
+===================
 
 
 docker images
 
-===
+===================
 REPOSITORY                       TAG              IMAGE ID       CREATED             SIZE
 react-app                        4                2b579ddfacdc   47 minutes ago      113MB
 react-app                        5                2b579ddfacdc   47 minutes ago      113MB
@@ -536,7 +536,7 @@ react-app                        latest           50d6cd640827   About an hour a
 <none>                           <none>           9feb485cbd35   3 hours ago         113MB
 node                             lts-alpine3.16   b48aa2e90c0a   2 days ago          112MB
 ubuntu                           latest           27941809078c   4 weeks ago         77.8MB
-===
+===================
 
 
 # rename new tag
@@ -544,7 +544,7 @@ docker image tag react-app:5 829282/hello-docker-repository:5
 
 docker images
 
-===
+===================
 REPOSITORY                       TAG              IMAGE ID       CREATED             SIZE
 react-app                        4                2b579ddfacdc   47 minutes ago      113MB
 react-app                        5                2b579ddfacdc   47 minutes ago      113MB
@@ -557,14 +557,14 @@ react-app                        latest           50d6cd640827   About an hour a
 <none>                           <none>           9feb485cbd35   3 hours ago         113MB
 node                             lts-alpine3.16   b48aa2e90c0a   2 days ago          112MB
 ubuntu                           latest           27941809078c   4 weeks ago         77.8MB
-===
+===================
 
 
 # and push it
 # this time if change is small the push is very fast
 docker push 829282/hello-docker-repository:5
 
-===
+===================
 The push refers to repository [docker.io/829282/hello-docker-repository]
 0ae5f1b326e5: Pushed 
 74251841d3a2: Layer already exists 
@@ -573,7 +573,7 @@ d56a7115c765: Layer already exists
 4f9820ca95dd: Layer already exists 
 24302eb7d908: Layer already exists 
 5: digest: sha256:a1f6e9d0b0fb32faa8cebc8b8c5eb68d178957302054d6b1595d714fa58a7381 size: 1575
-===
+===================
 
 
 # if you look at the internet in your repository you will see that new version in tag tab is made link: https://hub.docker.com/repository/docker/829282/hello-docker-repository

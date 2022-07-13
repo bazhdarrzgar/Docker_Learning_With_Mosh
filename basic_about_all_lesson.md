@@ -7,6 +7,11 @@ CTRL + W ( remove enter word in terminal )
 CTRL + TAB ( complete the word for you )
 CTRL + D ( if CTRL + C is not terminate the command then CTRL + D is complete it to run this )
 
+```
+
+## Learn Bash
+
+```bash
 
 ls -1 ( sort it but in up to down like ls -l not like default ls )
 
@@ -117,21 +122,32 @@ ls -l /etc > files.txt
 
 -------------------------------------------------------------
 
-## some note
+## Some Note About Flutter  
 
 ```bash
 
 docker create # create container
+
 dokcer exec # to run commnads in container for once
+
 docker volume # create a docker volume
+
 docker network # create a docker network
+
 docker rm # remove container 
+
 docker images # list the images
+
 docker rmi # remove image
+
 docker build # build a new image from dockerfile
+
 docker push # push your image to docker repo
+
 docker pull # download an image from docker repo
+
 docker commit # create an image from container
+
 
 ```
 
@@ -141,7 +157,7 @@ docker commit # create an image from container
 
 * install docker
 
-	-Linke: https://docs.docker.com/engine/install/
+	- Linke: https://docs.docker.com/engine/install/
 
 ```bash
 
@@ -213,16 +229,19 @@ docker run hello-docker
 
 * seeing the list of this container that running
 
-	docker ps -a
+```
+docker ps -a       or      docker ps
 
-or
-
-	docker ps
-
+```
 
 * if there is not container run for example this is ubuntu and need run with container you should run it like this:
 
+
+```
+
 docker run -it ubuntu
+
+```
 
 ---------------------------------------------------
 
@@ -282,7 +301,7 @@ docker compose up
 
 * different between yml language and json
 
-	- in json how we code
+1. in json how we code
 
 ```json
 
@@ -299,7 +318,7 @@ docker compose up
 
 ```
 
-	- in yml code
+2. in yml code
 
 ```yml
 
@@ -378,7 +397,7 @@ docker compose build --no-cache
 
 ```bash
 
-# turn of the all container
+# turn of all container
 docker compose down
 
 # start my container

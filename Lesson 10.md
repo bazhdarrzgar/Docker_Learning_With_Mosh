@@ -543,4 +543,4 @@ docker ps
 
 ```
 
-* note that any time you want change the image name you should just use property of ( image: image_name ) to docker-compose file after that build it again in the background and see the change
+* NOTE: that any time you want change the image name you should just use property of ( image: image_name ) to docker-compose file after that build it again in the background and see the change

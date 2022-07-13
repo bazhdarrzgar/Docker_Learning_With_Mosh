@@ -6,13 +6,13 @@
 # note anything in docker page need container you should run it with -it means iterative mode
 docker run -it ubuntu
 
-===
+===================
 Unable to find image 'ubuntu:latest' locally
 latest: Pulling from library/ubuntu
 405f018f9d1d: Pull complete 
 Digest: sha256:b6b83d3c331794420340093eb706a6f152d9c1fa51b262d9bf34594887c2c7ac
 Status: Downloaded newer image for ubuntu:latest
-===
+===================
 
 ```
 
@@ -52,69 +52,69 @@ root@1c6326fc5ba8:/#
 
 whoami
 
-===
+===================
 root
-===
+===================
 
 echo $0
 
-===
+===================
 /bin/bash
-===
+===================
 
 history
 
-===
+===================
 whoami
 echo $0
-===
+===================
 
 !2
 
-===
+===================
 /bin/bash
-===
+===================
 
 # bash is case sensitive
 Echo $0
 
-===
+===================
 bash: Echo: command not found
-===
+===================
 
 # installing program
 
 # first update the package database
 apt update
 
-===
+===================
 .
 .
 .
-===
+===================
 
 # now you can install this program you want
 apt install nano
 
-===
+===================
 .
 .
 .
-===
+===================
 
 # removing program
 apt remove nano
 
-===
+===================
 .
 .
 .
-===
+===================
 
 # looking at environment variable
 printenv
 
-===
+===================
 HOSTNAME=1c6326fc5ba8
 PWD=/
 HOME=/root
@@ -123,29 +123,29 @@ TERM=xterm
 SHLVL=1
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 _=/usr/bin/printenv
-===
+===================
 
 # look for specific environment variable
 printenv PATH
 
-===
+===================
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-===
+===================
 
 # add something to environment variable
 export DB_USER=alex
 
 echo $DB_USER
 
-===
+===================
 alex
-===
+===================
 
 printenv DB_USER
 
-===
+===================
 alex
-===
+===================
 
 # exit to the docker ubuntu 
 exit
@@ -168,9 +168,9 @@ docker start -i 1c6326fc5ba8
 
 echo $DB_USER
 
-===
+===================
 alex
-===
+===================
 
 # looking at the content of .bashrc
 nano ~/.bashrc
@@ -197,11 +197,11 @@ find              or              find name_directory
 # example
 find /etc
 
-===
+===================
 .
 .
 .
-===
+===================
  
 # find with name this componenet you want with hidden component
 find name_componenet
@@ -233,11 +233,11 @@ find / -type f -name "*.py" > python-files.txt
 # show process means this process is run
 ps
 
-===
+===================
     PID TTY          TIME CMD
       1 pts/0    00:00:00 bash
      23 pts/0    00:00:00 ps
-===
+===================
 
 # put something to the background
 sleep 100 &       # 100 means 100ms
@@ -245,23 +245,23 @@ sleep 100 &       # 100 means 100ms
 # now if you want see if this is in background
 ps
 
-===
+===================
     PID TTY          TIME CMD
       1 pts/0    00:00:00 bash
      24 pts/0    00:00:00 sleep
      25 pts/0    00:00:00 ps
-===
+===================
 
 # killing process
 kill 24   # this number is process id
 
 ps
 
-===
+===================
     PID TTY          TIME CMD
       1 pts/0    00:00:00 bash
      27 pts/0    00:00:00 ps
-===
+===================
 
 
 ```
