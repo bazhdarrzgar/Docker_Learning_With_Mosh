@@ -12,7 +12,7 @@
 
 * what you learn in this course 
 
-* link of course: (google drive)[https://drive.google.com/file/d/1oZyebZx7PXLueo33Fj0wJwZQt1ThOp5g/view?usp=sharing]
+* link of course: [google drive](https://drive.google.com/file/d/1oZyebZx7PXLueo33Fj0wJwZQt1ThOp5g/view?usp=sharing)
 
 * Introduction 
 
